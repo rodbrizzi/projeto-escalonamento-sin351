@@ -40,30 +40,31 @@ int main() {
     puts("┗                                                                                                                             ┛\n\n");
 
 
-    //Chamada da Função que simula a execução do SJF
-    puts("┏                                                                                                                             ┓\n\n");
-    SJF(process, process_count);
-    puts("┗                                                                                                                             ┛\n\n");
+    // //Chamada da Função que simula a execução do SJF
+    // puts("┏                                                                                                                             ┓\n\n");
+    // SJF(process, process_count);
+    // puts("┗                                                                                                                             ┛\n\n");
 
 
-    //Chamada da Função que Simula a execução do Round-Robin
-    puts("┏                                                                                                                             ┓\n\n");
-    RR(process, process_count, quantum);
-    puts("┗                                                                                                                             ┛\n\n");
+    // //Chamada da Função que Simula a execução do Round-Robin
+    // puts("┏                                                                                                                             ┓\n\n");
+    // RR(process, process_count, quantum);
+    // puts("┗                                                                                                                             ┛\n\n");
 
+    // //Chamada da função que Simula a execução do Loteria
+    // puts("┏                                                                                                                             ┓\n\n");
+    // Lotery(process, process_count);
+    // puts("┗                                                                                                                             ┛\n\n");
 
-    puts("┏                                                                                                                             ┓\n\n");
-    Lotery(process, process_count);
-    puts("┗                                                                                                                             ┛\n\n");
+    // //Chamada da função que simula a execução do SRT
+    // puts("┏                                                                                                                             ┓\n\n");
+    // SRT(process, process_count);
+    // puts("┗                                                                                                                             ┛\n\n");
 
-
-    puts("┏                                                                                                                             ┓\n\n");
-    SRT(process, process_count);
-    puts("┗                                                                                                                             ┛\n\n");
-
-    puts("┏                                                                                                                             ┓\n\n");
-    PPS(process, process_count);
-    puts("┗                                                                                                                             ┛\n\n");
+    // //Chamada da função que simula a execução do PPS
+    // puts("┏                                                                                                                             ┓\n\n");
+    // PPS(process, process_count);
+    // puts("┗                                                                                                                             ┛\n\n");
 
 
 
@@ -75,7 +76,9 @@ int main() {
 
     system("pause");
 
-
     return 0;
 
 }
+
+
+
