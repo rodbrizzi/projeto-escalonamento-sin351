@@ -34,16 +34,16 @@ int main() {
     fscanf(fp, " %d", &quantum);
 
 
-    //Chamada da Função que simula a execução do FCFS
-    puts("┏                                                                                                                             ┓\n\n");
-    FCFS(process, process_count);
-    puts("┗                                                                                                                             ┛\n\n");
-
-
-    // //Chamada da Função que simula a execução do SJF
+    // //Chamada da Função que simula a execução do FCFS
     // puts("┏                                                                                                                             ┓\n\n");
-    // SJF(process, process_count);
+    // FCFS(process, process_count);
     // puts("┗                                                                                                                             ┛\n\n");
+
+
+    //Chamada da Função que simula a execução do SJF
+    puts("┏                                                                                                                             ┓\n\n");
+    SJF(process, process_count);
+    puts("┗                                                                                                                             ┛\n\n");
 
 
     // //Chamada da Função que Simula a execução do Round-Robin
