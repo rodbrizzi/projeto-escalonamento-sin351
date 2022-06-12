@@ -40,16 +40,16 @@ int main() {
     // puts("┗                                                                                                                             ┛\n\n");
 
 
-    //Chamada da Função que simula a execução do SJF
-    puts("┏                                                                                                                             ┓\n\n");
-    SJF(process, process_count);
-    puts("┗                                                                                                                             ┛\n\n");
-
-
-    // //Chamada da Função que Simula a execução do Round-Robin
+    // //Chamada da Função que simula a execução do SJF
     // puts("┏                                                                                                                             ┓\n\n");
-    // RR(process, process_count, quantum);
+    // SJF(process, process_count);
     // puts("┗                                                                                                                             ┛\n\n");
+
+
+    //Chamada da Função que Simula a execução do Round-Robin
+    puts("┏                                                                                                                             ┓\n\n");
+    RR(process, process_count, quantum);
+    puts("┗                                                                                                                             ┛\n\n");
 
     // //Chamada da função que Simula a execução do Loteria
     // puts("┏                                                                                                                             ┓\n\n");
