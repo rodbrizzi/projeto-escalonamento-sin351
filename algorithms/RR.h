@@ -383,11 +383,10 @@ void RR(Process *p, int len, Quantum quantum)
 
 	rr_print_gantt_chart(p, len, quantum);
 
-	printf("\n\tAverage Waiting Time     : %-2.2lf\n", (double)total_waiting_time / (double)len);
-	printf("\tAverage Turnaround Time  : %-2.2lf\n", (double)total_turnaround_time / (double)len);
-	printf("\tAverage Response Time    : %-2.2lf\n\n", (double)total_response_time / (double)len);
-	printf("\tAverage Return Time    : %-2.2lf\n\n", (double)total_return_time/ (double)len);
-
+	printf("\n\tTempo médio de espera     : %-2.2lf\n", (double)total_waiting_time / (double)len);
+	printf("\tTempo médio de turnaround  : %-2.2lf\n", (double)total_turnaround_time / (double)len);
+	printf("\tTempo médio de resposta    : %-2.2lf\n", (double)total_response_time / (double)len);
+	printf("\tTempo médio de retorno     : %-2.2lf\n\n", (double)total_return_time/ (double)len);
 
 	print_table(p, len);
 	

@@ -145,6 +145,7 @@ void SJF(Process *p, int len){
 	int total_waiting_time = 0;
 	int total_turnaround_time = 0;
 	int total_response_time = 0;
+	int total_return_time = 0;
 
 	
 
@@ -168,6 +169,7 @@ void SJF(Process *p, int len){
 		total_waiting_time += p[i].waiting_time;
 		total_turnaround_time += p[i].turnaround_time;
 		total_response_time += p[i].response_time;
+		total_return_time += p[i].return_time;
 	}
 
 	// função para ordenar de forma crescente os processos com base no tempo de retorno,
@@ -179,9 +181,10 @@ void SJF(Process *p, int len){
 
 	//Saídas OBS: copiado do exemplo PPS
     //Tempo médio de espera | Tempo médio Turnaround | Tempo médio de resposta
-    printf("\n\tAverage Waiting Time     : %-2.2lf\n", (double)total_waiting_time / (double)len);
-    printf("\tAverage Turnaround Time  : %-2.2lf\n", (double)total_turnaround_time / (double)len);
-    printf("\tAverage Response Time    : %-2.2lf\n\n", (double)total_response_time / (double)len);
+	printf("\n\tTempo médio de espera     : %-2.2lf\n", (double)total_waiting_time / (double)len);
+	printf("\tTempo médio de turnaround  : %-2.2lf\n", (double)total_turnaround_time / (double)len);
+	printf("\tTempo médio de resposta    : %-2.2lf\n", (double)total_response_time / (double)len);
+	printf("\tTempo médio de retorno     : %-2.2lf\n\n", (double)total_return_time/ (double)len);
 
 	print_table(p, len);
 
