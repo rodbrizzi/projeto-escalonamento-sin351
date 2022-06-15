@@ -376,6 +376,7 @@ void RR(Process *p, int len, Quantum quantum)
 		total_waiting_time += p[i].waiting_time;
 		total_turnaround_time += p[i].turnaround_time;
 		total_response_time += p[i].response_time;
+		total_return_time += p[i].return_time;
 	}
 
 	printf("\tImplementação do Round Robin( Quantum : %d )\n\n", quantum);
