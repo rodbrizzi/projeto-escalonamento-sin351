@@ -344,19 +344,26 @@ void rr_print_gantt_chart(Process *p, int len, Quantum q)
 void RR(Process *p, int len, Quantum quantum)
 {
 	printf("\tImplementação do Round Robin( Quantum : %d )\n\n", quantum);
-	
+
+	// inicializa o processo
 	process_init(p, len);
 
+	// ordena os processos por ordem de chegada
 	merge_sort_by_arrive_time(p, 0, len);
 
+	// calcula tempo de espera
 	rr_calculate_waiting_time(p, len, quantum);
 
+	// calcula turnaround
 	rr_calculate_turnaround_time(p, len);
 
+	// função que imprime gráfico de gantt
 	rr_print_gantt_chart(p, len, quantum);
 
+	// função que calcula e imprime os tempos médios
 	rr_calculate_all_time(p, len);
 
+	// função que imprime a tabela dos processos
 	print_table(p, len);
 }
 

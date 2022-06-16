@@ -13,7 +13,7 @@ void lotery_print_gantt_chart(Process *p, int len) {
 
 void Lotery(Process *p, int len) {
     //Trabalhar na implementação aqui
-    printf("Necessario Implementar o Loteria");
+
 
 }
 

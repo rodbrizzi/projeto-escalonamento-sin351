@@ -13,17 +13,17 @@ void srt_calculate_all_time(Process *p, int len)
     int total_return_time = 0;
 
     for (i = 0; i < len; i++)
-    {   
+    {
         total_waiting_time += p[i].waiting_time;
         p[i].turnaround_time = p[i].return_time - p[i].arrive_time;
         total_turnaround_time += p[i].turnaround_time;
         total_response_time += p[i].response_time;
         total_return_time += p[i].return_time;
     }
-	printf("\n\tTempo médio de espera     : %-2.2lf\n", (double)total_waiting_time / (double)len);
-	printf("\tTempo médio de turnaround  : %-2.2lf\n", (double)total_turnaround_time / (double)len);
-	printf("\tTempo médio de resposta    : %-2.2lf\n", (double)total_response_time / (double)len);
-	printf("\tTempo médio de retorno     : %-2.2lf\n\n", (double)total_return_time/ (double)len);
+    printf("\n\tTempo médio de espera     : %-2.2lf\n", (double)total_waiting_time / (double)len);
+    printf("\tTempo médio de turnaround  : %-2.2lf\n", (double)total_turnaround_time / (double)len);
+    printf("\tTempo médio de resposta    : %-2.2lf\n", (double)total_response_time / (double)len);
+    printf("\tTempo médio de retorno     : %-2.2lf\n\n", (double)total_return_time / (double)len);
 }
 
 void srt_calculate_time(Process *p, int len)
@@ -48,9 +48,7 @@ void srt_calculate_time(Process *p, int len)
         {
             for (i = 0; i < len; i++)
             {
-                if ((p[i].completed == FALSE)
-                    && (p[i].arrive_time <= current_time)
-                    && (shortest_remain_time > remain_burst_time[i]))
+                if ((p[i].completed == FALSE) && (p[i].arrive_time <= current_time) && (shortest_remain_time > remain_burst_time[i]))
                 {
                     shortest_remain_time = remain_burst_time[i];
                     k = i;
@@ -61,8 +59,7 @@ void srt_calculate_time(Process *p, int len)
         {
             for (i = 0; i < len; i++)
             {
-                if ((p[i].completed == FALSE)
-                    && (shortest_remain_time > remain_burst_time[i]))
+                if ((p[i].completed == FALSE) && (shortest_remain_time > remain_burst_time[i]))
                 {
                     shortest_remain_time = remain_burst_time[i];
                     k = i;
@@ -115,8 +112,7 @@ void srt_print_gantt_chart(Process *p, int len)
         {
             for (i = 0; i < len; i++)
             {
-                if ((p[i].completed == FALSE)
-                    && (p[i].arrive_time <= current_time))
+                if ((p[i].completed == FALSE) && (p[i].arrive_time <= current_time))
                 {
                     if (shortest_remain_time > remain_burst_time[i])
                     {
@@ -171,9 +167,7 @@ void srt_print_gantt_chart(Process *p, int len)
             {
                 for (i = 0; i < len; i++)
                 {
-                    if ((p[i].completed == FALSE)
-                        && (p[i].arrive_time <= current_time)
-                        && (shortest_remain_time > remain_burst_time[i]))
+                    if ((p[i].completed == FALSE) && (p[i].arrive_time <= current_time) && (shortest_remain_time > remain_burst_time[i]))
                     {
                         shortest_remain_time = remain_burst_time[i];
                         k = i;
@@ -185,8 +179,7 @@ void srt_print_gantt_chart(Process *p, int len)
             {
                 for (i = 0; i < len; i++)
                 {
-                    if ((p[i].completed == FALSE)
-                        && (shortest_remain_time > remain_burst_time[i]))
+                    if ((p[i].completed == FALSE) && (shortest_remain_time > remain_burst_time[i]))
                     {
                         shortest_remain_time = remain_burst_time[i];
                         k = i;
@@ -258,9 +251,7 @@ void srt_print_gantt_chart(Process *p, int len)
         {
             for (i = 0; i < len; i++)
             {
-                if ((p[i].completed == FALSE)
-                    && (p[i].arrive_time <= current_time)
-                    && (shortest_remain_time > remain_burst_time[i]))
+                if ((p[i].completed == FALSE) && (p[i].arrive_time <= current_time) && (shortest_remain_time > remain_burst_time[i]))
                 {
                     shortest_remain_time = remain_burst_time[i];
                     k = i;
@@ -272,8 +263,7 @@ void srt_print_gantt_chart(Process *p, int len)
         {
             for (i = 0; i < len; i++)
             {
-                if ((p[i].completed == FALSE)
-                    && (shortest_remain_time > remain_burst_time[i]))
+                if ((p[i].completed == FALSE) && (shortest_remain_time > remain_burst_time[i]))
                 {
                     shortest_remain_time = remain_burst_time[i];
                     k = i;
@@ -312,9 +302,7 @@ void srt_print_gantt_chart(Process *p, int len)
             {
                 for (i = 0; i < len; i++)
                 {
-                    if ((p[i].completed == FALSE)
-                        && (p[i].arrive_time <= current_time)
-                        && (shortest_remain_time > remain_burst_time[i]))
+                    if ((p[i].completed == FALSE) && (p[i].arrive_time <= current_time) && (shortest_remain_time > remain_burst_time[i]))
                     {
                         shortest_remain_time = remain_burst_time[i];
                         k = i;
@@ -326,15 +314,13 @@ void srt_print_gantt_chart(Process *p, int len)
             {
                 for (i = 0; i < len; i++)
                 {
-                    if ((p[i].completed == FALSE)
-                        && (shortest_remain_time > remain_burst_time[i]))
+                    if ((p[i].completed == FALSE) && (shortest_remain_time > remain_burst_time[i]))
                     {
                         shortest_remain_time = remain_burst_time[i];
                         k = i;
                     }
                 }
             }
-
 
             if (pre_k != k)
             {
@@ -381,18 +367,23 @@ void SRT(Process *p, int len)
 {
     printf("\tImplementação SRT\n\n");
 
+    // inicializa os processos
     process_init(p, len);
 
+    // ordena por chegada
     merge_sort_by_arrive_time(p, 0, len);
 
+    // calculo dos tempos dos processos
     srt_calculate_time(p, len);
 
+    // imprime grafico de gantt
     srt_print_gantt_chart(p, len);
 
+    // calcula e imprime os tempos médios
     srt_calculate_all_time(p, len);
 
+    // imprime tabela de processos
     print_table(p, len);
-
 }
 
 #endif
