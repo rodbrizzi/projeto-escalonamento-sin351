@@ -51,11 +51,6 @@ int main() {
     RR(process, process_count, quantum);
     puts("┗                                                                                                                             ┛\n\n");
 
-    //Chamada da Função que simula a execução do Loteria
-    puts("┏                                                                                                                             ┓\n\n");
-    Lotery(process, process_count);
-    puts("┗                                                                                                                             ┛\n\n");
-
     //Chamada da Função que simula a execução do SRT
     puts("┏                                                                                                                             ┓\n\n");
     SRT(process, process_count);
